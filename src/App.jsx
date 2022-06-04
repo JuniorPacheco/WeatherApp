@@ -23,7 +23,7 @@ function App() {
 
   const dayOrNight = () => {
     const completeDate = new Date();
-    const hours = 6;
+    const hours = completeDate.getHours();
     if(hours >= 6 && hours <= 17){
       setIsDayOrNight(true);
       return true;
