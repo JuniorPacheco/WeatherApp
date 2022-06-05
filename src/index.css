@@ -138,6 +138,10 @@ p, h1, h2, h3 {
   cursor: pointer;
 }
 
+.navbar i:hover {
+  color: #03bb85;
+}
+
 /* Animación para imagen principal */
 
 .principal__body img {
@@ -243,7 +247,7 @@ p, h1, h2, h3 {
 /* More information */
 
 .moreInformation {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   text-align: center;
 }
@@ -270,6 +274,10 @@ p, h1, h2, h3 {
   .searcher,
   .moreInformation {
     min-height: 550px;
+  }
+
+  .moreInformation {
+    font-size: 4rem;
   }
 
   .searcher__results {

@@ -1,7 +1,8 @@
 const MoreInformation = ({principalData}) => {
   return (
     <main className="moreInformation">
-        <p>More Information</p>
+        <p>More Information<br/>About</p>
+        <p>{principalData.location}</p>
         <article className="moreInformation__body">    
             <p><i className='bx bxs-cloud' ></i> Clouds: {principalData.clouds} %</p>
             <p><i className='bx bxs-droplet-half'></i> Humidity: {principalData.humidity} %</p>

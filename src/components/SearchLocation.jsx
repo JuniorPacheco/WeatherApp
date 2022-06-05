@@ -74,7 +74,7 @@ const SearchLocation = ({setPrincipalData, setSection, isDayOrNight, setIsDayOrN
             <input 
             style={isDayOrNight ? {color: '#000'} : {color: '#fff'}}
             type="submit" 
-            value={'Buscar'}
+            value={'Search'}
             onClick={handleSubmit}
             />
         </form>
