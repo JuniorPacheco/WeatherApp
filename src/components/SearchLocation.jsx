@@ -79,7 +79,14 @@ const SearchLocation = ({setPrincipalData, setSection, isDayOrNight, setIsDayOrN
             />
         </form>
         <section className="searcher__results">
-            {locations.map(element => <Location key={element.id} infoLocation={element} setPrincipalData={setPrincipalData} setSection={setSection} setIsDayOrNight={setIsDayOrNight} dayOrNightLocation={dayOrNightLocation}/>)}
+            {locations.map(element => <Location 
+                                        key={element.id} 
+                                        infoLocation={element} 
+                                        setPrincipalData={setPrincipalData} 
+                                        setSection={setSection} 
+                                        setIsDayOrNight={setIsDayOrNight} 
+                                        dayOrNightLocation={dayOrNightLocation}
+                                        />)}
         </section>
     </main>
   )

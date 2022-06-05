@@ -73,17 +73,38 @@ function App() {
   return (
     <div 
     style={isDayOrNight ? 
-    {backgroundColor: '#fff', borderColor: '#a3b4d5', color: '#000'} : 
-    {backgroundColor: '#141c2c', borderColor: '#000', color: '#FFF'}} 
+      {backgroundColor: '#fff', 
+      borderColor: '#a3b4d5', 
+      color: '#000'} 
+    : 
+      {backgroundColor: '#141c2c', 
+      borderColor: '#000', 
+      color: '#FFF'}} 
     className="weatherApp"
     >
       {section === 'principal' ? 
-      <Principal principalData={principalData} isDayOrNight={isDayOrNight}/> : 
-      section === 'searcher' ? <SearchLocation setPrincipalData={setPrincipalData} setSection={setSection} isDayOrNight={isDayOrNight} setIsDayOrNight={setIsDayOrNight}/> : 
-      section === 'moreInformation' ? 
-      <MoreInformation principalData={principalData}/> : ''}
+        <Principal 
+        principalData={principalData} 
+        isDayOrNight={isDayOrNight}
+        /> 
+      : 
+        section === 'searcher' ? 
+          <SearchLocation 
+          setPrincipalData={setPrincipalData} 
+          setSection={setSection} 
+          isDayOrNight={isDayOrNight} 
+          setIsDayOrNight={setIsDayOrNight}
+          /> 
+        : 
+          <MoreInformation 
+          principalData={principalData}
+          />}
       <nav className='navbar'>
-        <NavBar principalData={principalData} setPrincipalData={setPrincipalData} setSection={setSection}/>
+        <NavBar 
+        principalData={principalData} 
+        setPrincipalData={setPrincipalData} 
+        setSection={setSection}
+        />
       </nav>
     </div>
   )
