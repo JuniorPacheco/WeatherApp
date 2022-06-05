@@ -4,7 +4,6 @@ import Principal from './components/Principal'
 import { fechaActual } from './helpers/index.js'
 import SearchLocation from './components/SearchLocation'
 import MoreInformation from './components/MoreInformation'
-import Spinner from './components/Spinner'
 import imageAndColor from './img/imagenes.js'
 import axios from 'axios'
 
