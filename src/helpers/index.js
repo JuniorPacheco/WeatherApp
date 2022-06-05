@@ -11,6 +11,7 @@ export const fechaActual = () => {
         year: 'numeric',
         month: 'long',
         day: '2-digit'
+
     }
     return fechaNueva.toLocaleDateString('es-Es', opciones);
 }

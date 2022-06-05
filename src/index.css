@@ -41,10 +41,7 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   color: var(--blanco);
 }
-button {
-  cursor: pointer;
-  padding: 0.7rem;
-}
+
 img {
   max-width: 100%;
   height: 100%;
@@ -107,11 +104,6 @@ p, h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
-@media (min-width: 410px) {
-  .temperature {
-    font-size: 8rem;
-  }
-}
 
 .temperature.night {
   background: linear-gradient(#fff, #d9dadb, #000);
@@ -137,7 +129,6 @@ p, h1, h2, h3 {
 
 .navbar {
   margin-top: 2rem;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 3rem;
@@ -166,4 +157,120 @@ p, h1, h2, h3 {
   25%{transform: translate(0, -5px);}
   75%{transform: translate(0, 5px);}
   100%{transform: translate(0, 0);}
+}
+
+/* Buscador por lugar */
+
+.principal,
+.searcher {
+  min-height: 400px;
+}
+
+.searcher {
+  width: 100%;
+}
+
+.searcher__input p {
+  margin-bottom: 1rem;
+}
+
+.searcher__input input:first-of-type {
+  padding: 5px;
+  font-family: var(--fuentePrincipal);
+  font-size: 2.2rem;
+  display: block;
+  border-radius: 10px;
+  background-color: #a3b4d5;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searcher__input input:first-of-type::placeholder {
+  color: #000;
+}
+
+.searcher__input input:last-of-type {
+  display: block;
+  padding: 10px;
+  background-color: #a3b4d5;
+  border: none;
+  width: 50%;
+  margin: 10px auto 0 auto;
+  border-radius: 5px;
+  font-family: var(--fuentePrincipal);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.searcher__input input:last-of-type:hover {
+  background-color: #9aa8c4;
+}
+
+.searcher__results {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  max-height: 310px;
+  overflow: auto;
+}
+
+.searcher__location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid transparent;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background-color: #a3b4d5;
+}
+
+/* Mensaje de error */
+
+.errorContainer {
+  background-color: #B7322C;
+  color: #FFF;
+  padding: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* More information */
+
+.moreInformation {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.moreInformation__body {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 550px;
+}
+
+/* Responsive */
+
+@media (min-width: 410px) {
+  .temperature {
+    font-size: 8rem;
+  }
+
+  .principal,
+  .searcher {
+    min-height: 550px;
+  }
+
+  .searcher__results {
+    max-height: 460px;
+  }
 }
