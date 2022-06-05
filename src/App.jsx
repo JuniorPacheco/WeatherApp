@@ -13,7 +13,7 @@ function App() {
   const [isDayOrNight, setIsDayOrNight] = useState(true);
   const [section, setSection] = useState('principal');
 
-  const dayOrNight = (dt, sunset, sunrise) => {
+  const dayOrNight = (dt, sunrise, sunset) => {
     if(dt >= sunrise && dt <= sunset){
       setIsDayOrNight(true);
       return true;
@@ -58,6 +58,7 @@ function App() {
           humidity: res.data.main.humidity
         }
         const resultDayOrNight = dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset);
+        console.log(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset)
         datosPrimordiales.color = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).color;
         datosPrimordiales.image = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).image;
         setPrincipalData(datosPrimordiales);
