@@ -1,5 +1,3 @@
-import dayClear from '../img/day-clear.png'
-
 const Principal = ({ principalData, isDayOrNight}) => {
   return (
     <main className="principal">

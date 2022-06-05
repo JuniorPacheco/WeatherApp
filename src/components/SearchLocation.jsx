@@ -65,7 +65,7 @@ const SearchLocation = ({setPrincipalData, setSection, isDayOrNight, setIsDayOrN
         <form className="searcher__input">
             <p
             style={isDayOrNight ? {color: '#000'} : {color: '#fff'}}
-            >Busqueda por pais o ciudad</p>
+            >Search by country or city</p>
             <input 
             style={isDayOrNight ? {color: '#000'} : {color: '#fff'}}
             onChange={e => setlocation(e.target.value)}

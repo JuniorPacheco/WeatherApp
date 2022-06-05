@@ -162,16 +162,16 @@ p, h1, h2, h3 {
 /* Buscador por lugar */
 
 .principal,
-.searcher {
+.searcher,
+.moreInformation {
   min-height: 400px;
-}
-
-.searcher {
-  width: 100%;
 }
 
 .searcher__input p {
   margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .searcher__input input:first-of-type {
@@ -213,7 +213,7 @@ p, h1, h2, h3 {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  max-height: 310px;
+  max-height: 190px;
   overflow: auto;
 }
 
@@ -249,13 +249,14 @@ p, h1, h2, h3 {
 }
 
 .moreInformation__body {
-  font-size: 2.5rem;
+  text-align: left;
+  font-size: 2.4rem;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  min-height: 550px;
+  gap: 1.3rem;
+  min-height: 400px;
 }
 
 /* Responsive */
@@ -266,11 +267,12 @@ p, h1, h2, h3 {
   }
 
   .principal,
-  .searcher {
+  .searcher,
+  .moreInformation {
     min-height: 550px;
   }
 
   .searcher__results {
-    max-height: 460px;
+    max-height: 380px;
   }
 }

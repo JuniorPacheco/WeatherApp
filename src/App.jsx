@@ -4,6 +4,7 @@ import Principal from './components/Principal'
 import { fechaActual } from './helpers/index.js'
 import SearchLocation from './components/SearchLocation'
 import MoreInformation from './components/MoreInformation'
+import Spinner from './components/Spinner'
 import imageAndColor from './img/imagenes.js'
 import axios from 'axios'
 
@@ -14,10 +15,12 @@ function App() {
   const [section, setSection] = useState('principal');
 
   const dayOrNight = (dt, sunset, sunrise) => {
-    if(dt >= sunset && dt <= sunrise){
+    if(dt >= sunrise && dt <= sunset){
       setIsDayOrNight(true);
+      return true;
     }else{
       setIsDayOrNight(false);
+      return false;
     }
   }
 
@@ -55,13 +58,15 @@ function App() {
           pressure: res.data.main.pressure,
           humidity: res.data.main.humidity
         }
-        console.log(res.data)
-        dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset);
-        datosPrimordiales.color = imageAndColor(isDayOrNight, datosPrimordiales.idDescription).color;
-        datosPrimordiales.image = imageAndColor(isDayOrNight, datosPrimordiales.idDescription).image;
+        const resultDayOrNight = dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset);
+        datosPrimordiales.color = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).color;
+        datosPrimordiales.image = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).image;
         setPrincipalData(datosPrimordiales);
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        setLoading(false);
+        console.log(error)
+      })
     }
   }, [coords])
 
@@ -70,12 +75,13 @@ function App() {
     style={isDayOrNight ? 
     {backgroundColor: '#fff', borderColor: '#a3b4d5', color: '#000'} : 
     {backgroundColor: '#141c2c', borderColor: '#000', color: '#FFF'}} 
-    className="weatherApp">
-        {section === 'principal' ? 
-        <Principal principalData={principalData} isDayOrNight={isDayOrNight}/> : 
-        section === 'searcher' ? <SearchLocation setPrincipalData={setPrincipalData} setSection={setSection} isDayOrNight={isDayOrNight} setIsDayOrNight={setIsDayOrNight}/> : 
-        section === 'moreInformation' ? 
-        <MoreInformation principalData={principalData}/> : ''}
+    className="weatherApp"
+    >
+      {section === 'principal' ? 
+      <Principal principalData={principalData} isDayOrNight={isDayOrNight}/> : 
+      section === 'searcher' ? <SearchLocation setPrincipalData={setPrincipalData} setSection={setSection} isDayOrNight={isDayOrNight} setIsDayOrNight={setIsDayOrNight}/> : 
+      section === 'moreInformation' ? 
+      <MoreInformation principalData={principalData}/> : ''}
       <nav className='navbar'>
         <NavBar principalData={principalData} setPrincipalData={setPrincipalData} setSection={setSection}/>
       </nav>
