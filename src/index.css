@@ -54,22 +54,19 @@ p, h1, h2, h3 {
 
 .presentation > p {
   text-align: center;
-  font-weight: bold;
+}
+
+.presentation p {
+  filter: drop-shadow(0 1px 5px white);
+  font-weight: 900;
 }
 
 .presentation p:first-of-type {
   font-size: 6rem;
-  font-weight: 900;
-  filter: drop-shadow(0 4px 15px white);
-}
-
-.authors {
-  filter: drop-shadow(0 4px 15px white);
 }
 
 .presentation__images {
   display: flex;
-
 }
 
 .presentation__images img {
@@ -94,8 +91,20 @@ p, h1, h2, h3 {
   margin: 0 1rem;
 }
 
+.weatherApp.isDay {
+  background-color: #fff;
+  border-color: #a3b4d5;
+  color: #000;
+}
+
+.weatherApp.isNight {
+  background-color: #141c2c;
+  border-color: #000;
+  color: #fff;
+}
+
 .weatherApp.initiation {
-  background: linear-gradient(to right, white, black);
+  background: linear-gradient(to right, white 0%, white 50% , black 50%, black 100%);
   border: transparent;
 }
 

@@ -79,15 +79,7 @@ function App() {
 
   return (
     <div 
-    style={isDayOrNight ? 
-      {backgroundColor: '#fff', 
-      borderColor: '#a3b4d5', 
-      color: '#000'} 
-    : 
-      {backgroundColor: '#141c2c', 
-      borderColor: '#000', 
-      color: '#FFF'}} 
-    className={`weatherApp ${loading ? 'initiation' : '' }`}
+    className={`weatherApp ${loading ? 'initiation' : ''} ${isDayOrNight ? 'isDay' : 'isNight'}`}
     >
       {loading ? <Spinner /> : 
       <>

@@ -14,31 +14,40 @@
   }
   .sk-cube-grid .sk-cube1 {
     -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s;
+            background-color: black; }
   .sk-cube-grid .sk-cube2 {
     -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
+            animation-delay: 0.3s; 
+  background: linear-gradient(to right, black 0%, black 50% , white 50%, white 100%);}
   .sk-cube-grid .sk-cube3 {
     -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s; }
+            animation-delay: 0.4s; 
+            background-color: white;}
   .sk-cube-grid .sk-cube4 {
     -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
+            animation-delay: 0.1s; 
+            background-color: black;}
   .sk-cube-grid .sk-cube5 {
     -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s; 
+            background: linear-gradient(to right, black 0%, black 50% , white 50%, white 100%);}
   .sk-cube-grid .sk-cube6 {
     -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s; }
+            animation-delay: 0.3s; 
+            background-color: white;}
   .sk-cube-grid .sk-cube7 {
     -webkit-animation-delay: 0s;
-            animation-delay: 0s; }
+            animation-delay: 0s; 
+            background-color: black;}
   .sk-cube-grid .sk-cube8 {
     -webkit-animation-delay: 0.1s;
-            animation-delay: 0.1s; }
+            animation-delay: 0.1s; 
+            background: linear-gradient(to right, black 0%, black 50% , white 50%, white 100%);}
   .sk-cube-grid .sk-cube9 {
     -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s; }
+            animation-delay: 0.2s; 
+            background-color: white;}
   
   @-webkit-keyframes sk-cubeGridScaleDelay {
     0%, 70%, 100% {
