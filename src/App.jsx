@@ -4,6 +4,7 @@ import Principal from './components/Principal'
 import { fechaActual } from './helpers/index.js'
 import SearchLocation from './components/SearchLocation'
 import MoreInformation from './components/MoreInformation'
+import Spinner from './components/Spinner'
 import imageAndColor from './img/imagenes.js'
 import axios from 'axios'
 
@@ -12,6 +13,7 @@ function App() {
   const [principalData, setPrincipalData] = useState({});
   const [isDayOrNight, setIsDayOrNight] = useState(true);
   const [section, setSection] = useState('principal');
+  const [loading, setLoading] = useState(true);
 
   const dayOrNight = (dt, sunrise, sunset) => {
     if(dt >= sunrise && dt <= sunset){
@@ -67,6 +69,11 @@ function App() {
         setLoading(false);
         console.log(error)
       })
+      .finally(() => {
+        setTimeout(() => {
+          setLoading(false)
+        }, 2000)
+      })
     }
   }, [coords])
 
@@ -80,32 +87,36 @@ function App() {
       {backgroundColor: '#141c2c', 
       borderColor: '#000', 
       color: '#FFF'}} 
-    className="weatherApp"
+    className={`weatherApp ${loading ? 'initiation' : '' }`}
     >
-      {section === 'principal' ? 
-        <Principal 
-        principalData={principalData} 
-        isDayOrNight={isDayOrNight}
-        /> 
-      : 
-        section === 'searcher' ? 
-          <SearchLocation 
-          setPrincipalData={setPrincipalData} 
-          setSection={setSection} 
-          isDayOrNight={isDayOrNight} 
-          setIsDayOrNight={setIsDayOrNight}
+      {loading ? <Spinner /> : 
+      <>
+        {section === 'principal' ? 
+          <Principal 
+          principalData={principalData} 
+          isDayOrNight={isDayOrNight}
           /> 
         : 
-          <MoreInformation 
-          principalData={principalData}
-          />}
-      <nav className='navbar'>
-        <NavBar 
-        principalData={principalData} 
-        setPrincipalData={setPrincipalData} 
-        setSection={setSection}
-        />
-      </nav>
+          section === 'searcher' ? 
+            <SearchLocation 
+            setPrincipalData={setPrincipalData} 
+            setSection={setSection} 
+            isDayOrNight={isDayOrNight} 
+            setIsDayOrNight={setIsDayOrNight}
+            /> 
+          : 
+            <MoreInformation 
+            principalData={principalData}
+        />}  
+        <nav className='navbar'>
+          <NavBar 
+          principalData={principalData} 
+          setPrincipalData={setPrincipalData} 
+          setSection={setSection}
+          />
+        </nav>
+      </>
+      }
     </div>
   )
 }

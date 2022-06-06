@@ -50,6 +50,39 @@ p, h1, h2, h3 {
   margin: 0;
 }
 
+/* Presentation */
+
+.presentation > p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.presentation p:first-of-type {
+  font-size: 6rem;
+  font-weight: 900;
+  filter: drop-shadow(0 4px 15px white);
+}
+
+.authors {
+  filter: drop-shadow(0 4px 15px white);
+}
+
+.presentation__images {
+  display: flex;
+
+}
+
+.presentation__images img {
+  margin-top: 1rem;
+  animation: 6s infinite flotar;
+  width: 50%;
+  filter: drop-shadow(0 4px 15px rgba(229, 190, 1, 0.4));
+}
+
+.presentation__images img:last-of-type {
+  filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.4));
+}
+
 /* WeatherApp */
 
 .weatherApp {
@@ -59,6 +92,11 @@ p, h1, h2, h3 {
   padding: 2.5rem;
   background-color: #FFF;
   margin: 0 1rem;
+}
+
+.weatherApp.initiation {
+  background: linear-gradient(to right, white, black);
+  border: transparent;
 }
 
 /* Principal */
