@@ -70,6 +70,9 @@ function App() {
         console.log(error)
       })
       .finally(() => {
+        setTimeout(() => {
+          setLoading(false)
+        }, 2000)
       })
     }
   }, [coords])
