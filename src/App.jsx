@@ -15,12 +15,16 @@ function App() {
   const [section, setSection] = useState('principal');
   const [loading, setLoading] = useState(true);
 
-  const dayOrNight = (dt, sunrise, sunset) => {
+  const dayOrNight = (dt, sunrise, sunset, boolean) => {
     if(dt >= sunrise && dt <= sunset){
-      setIsDayOrNight(true);
+      if(boolean){
+        setIsDayOrNight(true);
+      }
       return true;
     }else{
-      setIsDayOrNight(false);
+      if(boolean){
+        setIsDayOrNight(false);
+      }
       return false;
     }
   }
@@ -59,19 +63,18 @@ function App() {
           pressure: res.data.main.pressure,
           humidity: res.data.main.humidity
         }
-        const resultDayOrNight = dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset);
-        console.log(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset)
+        const resultDayOrNight = dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset, false);
         datosPrimordiales.color = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).color;
         datosPrimordiales.image = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).image;
         setPrincipalData(datosPrimordiales);
       })
       .catch(error => {
-        setLoading(false);
-        console.log(error)
+        console.log(error);
       })
       .finally(() => {
         setTimeout(() => {
-          setLoading(false)
+          setLoading(false);
+          dayOrNight(principalData.dt, principalData.sunrise, principalData.sunset, true);
         }, 2000)
       })
     }
