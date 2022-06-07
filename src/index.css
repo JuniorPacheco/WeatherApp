@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 2rem;
   font-family: var(--fuentePrincipal);
   font-size: 2rem;
   background-color: #ececec;
@@ -89,7 +89,7 @@ p, h1, h2, h3 {
   padding: 2.5rem;
   background-color: #FFF;
   margin: 0 auto;
-  min-height: 676.667px;
+  max-height: 676.667px;
 }
 
 .weatherApp.isDay {
@@ -218,6 +218,11 @@ p, h1, h2, h3 {
   min-height: 400px;
 }
 
+.searcher__input {
+  display: flex;
+  flex-direction: column;
+}
+
 .searcher__input p {
   margin-bottom: 1rem;
   text-align: center;
@@ -226,15 +231,15 @@ p, h1, h2, h3 {
 }
 
 .searcher__input input:first-of-type {
-  padding: 5px;
+  padding: 5px 0;
   font-family: var(--fuentePrincipal);
   font-size: 2.2rem;
-  display: block;
   border-radius: 10px;
   background-color: #a3b4d5;
   border: none;
   margin: 0 auto;
   text-align: center;
+  width: 100%;
 }
 
 .searcher__input input:first-of-type::placeholder {
@@ -242,11 +247,10 @@ p, h1, h2, h3 {
 }
 
 .searcher__input input:last-of-type {
-  display: block;
   padding: 10px;
   background-color: #a3b4d5;
   border: none;
-  width: 50%;
+  width: 30%;
   margin: 10px auto 0 auto;
   border-radius: 5px;
   font-family: var(--fuentePrincipal);
@@ -321,10 +325,6 @@ p, h1, h2, h3 {
   .searcher,
   .moreInformation {
     min-height: 550px;
-  }
-
-  .moreInformation {
-    font-size: 4rem;
   }
 
   .searcher__results {
