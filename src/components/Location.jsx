@@ -1,6 +1,7 @@
 const Location = ({infoLocation, setPrincipalData, setSection, setIsDayOrNight, dayOrNightLocation }) => {
 
     const handleSendLocation = () => {
+        console.log(dayOrNightLocation(infoLocation.dt, infoLocation.sunrise, infoLocation.sunset))
         setIsDayOrNight(dayOrNightLocation(infoLocation.dt, infoLocation.sunrise, infoLocation.sunset));
         setPrincipalData(infoLocation);
         setSection('principal');

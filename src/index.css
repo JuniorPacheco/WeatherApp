@@ -89,7 +89,7 @@ p, h1, h2, h3 {
   padding: 2.5rem;
   background-color: #FFF;
   margin: 0 auto;
-  max-height: 676.667px;
+  min-height: 676.667px;
 }
 
 .weatherApp.isDay {
