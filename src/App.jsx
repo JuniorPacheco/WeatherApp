@@ -66,6 +66,7 @@ function App() {
         const resultDayOrNight = dayOrNight(datosPrimordiales.dt, datosPrimordiales.sunrise, datosPrimordiales.sunset, false);
         datosPrimordiales.color = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).color;
         datosPrimordiales.image = imageAndColor(resultDayOrNight, datosPrimordiales.idDescription).image;
+        console.log(datosPrimordiales)
         setPrincipalData(datosPrimordiales);
       })
       .catch(error => {
@@ -74,7 +75,6 @@ function App() {
       .finally(() => {
         setTimeout(() => {
           setLoading(false);
-          dayOrNight(principalData.dt, principalData.sunrise, principalData.sunset, true);
         }, 2000)
       })
     }
